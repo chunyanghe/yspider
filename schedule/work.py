@@ -19,8 +19,9 @@ sys.setdefaultencoding('utf-8')
 
 def _builddict(atc, link):
     usermap = dict()
-    usermap["no"] = base64.encodestring(link)
+    usermap["no"] = utils.randomstr(10)
     usermap["title"] = atc.title
+    usermap["link"] = link
     usermap["lastupdate"] = datetime.datetime.now().strftime("%Y-%m-%d")
     usermap["detail"] = atc.cleaned_text[:1000]
     temp = usermap["detail"]
