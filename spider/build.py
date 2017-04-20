@@ -7,23 +7,23 @@ import dicttoxml
 
 # build a json str
 # return json
-def buildjson(*args):
+def buildjson(args):
     return json.dumps(args, ensure_ascii=False)
 
 
 # build xml str return xml
-def buildxml(rootname=None, *args):
+def buildxml(args, rootname=None):
     return dicttoxml.dicttoxml(args, custom_root=rootname)
 
 
 # build a sql and you can give a tbname
 # eg insert into dbname values()
-def buildsql(tbname=None, *args):
+def buildsql(args, tbname=None):
     vals = ', '.join(['%s'] * len(args))
     columns = ', '.join(args.keys())
     sql = "INSERT INTO %s (%s) VALUES (%s)" % (tbname, columns, vals)
     return sql;
 
 
-def buildjsonstr(*args):
+def buildjsonstr(args):
     pass

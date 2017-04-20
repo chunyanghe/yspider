@@ -25,7 +25,7 @@ def _builddict(atc, link):
     usermap["detail"] = atc.cleaned_text[:1000]
     temp = usermap["detail"]
     usermap["resume"] = temp[:min(50, len(temp))]
-    usermap["remark"] = atc.authors
+    usermap["remark"] = ""
     usermap["type"] = 0
     usermap["score"] = 0.0
     usermap["comments"] = 0
